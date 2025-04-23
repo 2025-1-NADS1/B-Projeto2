@@ -6,10 +6,8 @@ Veja o design do projeto no Figma:
 # Backlog
 
 - [x] Criar protótipo no Figma
-- [o] Definir funcionalidades principais
+- [x] Definir funcionalidades principais
 - [ ] Implementar página inicial
 - [ ] Criar formulário de contato
 - [ ] Testar versão final
 
-x - feito
-o - em produção
