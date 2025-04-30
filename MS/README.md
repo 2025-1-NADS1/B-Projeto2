@@ -1,6 +1,6 @@
 Requisitos Funcionais:
 Avaliação do desempenho dos eletrodomésticos /
-Gamificação /
+- Gamificação /
 Monitoramento Geral de gastos da casa /
 Integração de eletrodomésticos /
 Interface simples e acessível /
@@ -12,4 +12,4 @@ Mapeamento de ambiente em tempo real /
 Controle por voz de eletrodomésticos /
 Não disponibilizar dados de clientes para terceiros /
 Trava de segurança codificada /
-Seleção do tema da tela da dashboard /
+Seleção do tema da tela da dashboard
