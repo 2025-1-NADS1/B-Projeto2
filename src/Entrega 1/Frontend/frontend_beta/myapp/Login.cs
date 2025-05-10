@@ -79,7 +79,7 @@ namespace myapp
             String Email = textBox1.Text;
             String Senha = textBox2.Text;
 
-            if (Email == "usuario@gmail.com" && Senha == "senha123")
+            if (Email != "usuario@gmail.com" && Senha != "senha123")
             {
                 new index().Show();
                 this.Hide();
