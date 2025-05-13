@@ -76,28 +76,7 @@ namespace myapp
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            String Email = textBox1.Text;
-            String Senha = textBox2.Text;
 
-            if (Email != "usuario@gmail.com" && Senha != "senha123")
-            {
-                new index().Show();
-                this.Hide();
-            }
-            else
-            {
-                if (Email != "usuario@gmail.com")
-                {
-                    MessageBox.Show("Usuário não encontrado!");
-                    textBox1.Clear();
-                    textBox2.Clear();
-                }
-                else
-                {
-                    MessageBox.Show("A senha está incorreta!");
-                    textBox2.Clear();
-                }
-            }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e) { }
@@ -204,7 +183,34 @@ namespace myapp
 
         private void button6_Click(object sender, EventArgs e)
         {
+            new trocar_senha().Show();
+            this.Hide();
+        }
 
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            String Email = textBox1.Text;
+            String Senha = textBox2.Text;
+
+            if (Email != "usuario@gmail.com" && Senha != "senha123")
+            {
+                new index().Show();
+                this.Hide();
+            }
+            else
+            {
+                if (Email != "usuario@gmail.com")
+                {
+                    MessageBox.Show("Usuário não encontrado!");
+                    textBox1.Clear();
+                    textBox2.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("A senha está incorreta!");
+                    textBox2.Clear();
+                }
+            }
         }
     }
 }
