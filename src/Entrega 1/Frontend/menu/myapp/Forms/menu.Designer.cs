@@ -34,6 +34,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.siticoneCirclePictureBox1 = new Siticone.Desktop.UI.WinForms.SiticoneCirclePictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panelQuestsContainer = new System.Windows.Forms.Panel();
             this.siticoneCircleProgressBar1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.siticoneCirclePictureBox1)).BeginInit();
@@ -43,7 +44,7 @@
             // siticoneCircleProgressBar1
             // 
             this.siticoneCircleProgressBar1.Controls.Add(this.label1);
-            this.siticoneCircleProgressBar1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.siticoneCircleProgressBar1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(49)))), ((int)(((byte)(57)))));
             this.siticoneCircleProgressBar1.FillThickness = 15;
             this.siticoneCircleProgressBar1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.siticoneCircleProgressBar1.ForeColor = System.Drawing.Color.White;
@@ -76,7 +77,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(67, 386);
+            this.button1.Location = new System.Drawing.Point(84, 538);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
@@ -112,12 +113,22 @@
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
             // 
+            // panelQuestsContainer
+            // 
+            this.panelQuestsContainer.AutoScroll = true;
+            this.panelQuestsContainer.Location = new System.Drawing.Point(18, 213);
+            this.panelQuestsContainer.Name = "panelQuestsContainer";
+            this.panelQuestsContainer.Size = new System.Drawing.Size(200, 319);
+            this.panelQuestsContainer.TabIndex = 6;
+            this.panelQuestsContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.panelQuestsContainer_Paint);
+            // 
             // menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(20)))), ((int)(((byte)(29)))));
-            this.ClientSize = new System.Drawing.Size(238, 450);
+            this.ClientSize = new System.Drawing.Size(244, 573);
+            this.Controls.Add(this.panelQuestsContainer);
             this.Controls.Add(this.siticoneCirclePictureBox1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
@@ -142,5 +153,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private Siticone.Desktop.UI.WinForms.SiticoneCirclePictureBox siticoneCirclePictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Panel panelQuestsContainer;
     }
 }

@@ -70,60 +70,69 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Changepass.cs">
+    <Compile Include="Forms\Changepass.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Changepass.Designer.cs">
+    <Compile Include="Forms\Changepass.Designer.cs">
       <DependentUpon>Changepass.cs</DependentUpon>
     </Compile>
-    <Compile Include="index.cs">
+    <Compile Include="Forms\index.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="index.Designer.cs">
+    <Compile Include="Forms\index.Designer.cs">
       <DependentUpon>index.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs">
+    <Compile Include="Forms\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
+    <Compile Include="Forms\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="main.cs">
+    <Compile Include="Forms\main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="main.Designer.cs">
+    <Compile Include="Forms\main.Designer.cs">
       <DependentUpon>main.cs</DependentUpon>
     </Compile>
-    <Compile Include="menu.cs">
+    <Compile Include="Forms\menu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="menu.Designer.cs">
+    <Compile Include="Forms\menu.Designer.cs">
       <DependentUpon>menu.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Changepass.resx">
+    <Compile Include="Controls\QuestControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\QuestControl.Designer.cs">
+      <DependentUpon>QuestControl.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Controls\QuestControl.resx">
+      <DependentUpon>QuestControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Changepass.resx">
       <DependentUpon>Changepass.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="index.resx">
+    <EmbeddedResource Include="Forms\index.resx">
       <DependentUpon>index.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.en-US.resx">
+    <EmbeddedResource Include="Forms\Login.en-US.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.pt-BR.resx">
+    <EmbeddedResource Include="Forms\Login.pt-BR.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.pt-CV.resx">
+    <EmbeddedResource Include="Forms\Login.pt-CV.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
+    <EmbeddedResource Include="Forms\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="main.resx">
+    <EmbeddedResource Include="Forms\main.resx">
       <DependentUpon>main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="menu.resx">
+    <EmbeddedResource Include="Forms\menu.resx">
       <DependentUpon>menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -149,5 +158,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
