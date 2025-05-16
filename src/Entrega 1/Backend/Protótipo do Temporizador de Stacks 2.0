@@ -1,0 +1,161 @@
+﻿using System;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace TemporizadorBonito
+{
+    public class MainForm : Form
+    {
+        private System.Windows.Forms.Timer stackTimer;
+        private System.Windows.Forms.Timer usageTimer;
+
+        private Label lblTitulo;
+        private Label lblTempo;
+        private Label lblStacks;
+        private Label lblTempoTotal;
+        private Button btnUsarStack;
+
+        private int countdownSeconds = 30;
+        private int currentSeconds;
+        private int stackCount = 0;
+
+        private TimeSpan tempoDeUso = TimeSpan.Zero;
+
+        public MainForm()
+        {
+            InitializeComponents();
+            StartTimers();
+        }
+
+        private void InitializeComponents()
+        {
+            this.Text = "Temporizador de Recompensas";
+            this.ClientSize = new Size(500, 350);
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.BackColor = Color.FromArgb(40, 44, 52);
+
+            Font fonteGeral = new Font("Segoe UI", 14, FontStyle.Regular);
+
+            lblTitulo = new Label
+            {
+                Text = "⏳ Temporizador de Recompensas",
+                AutoSize = false,
+                TextAlign = ContentAlignment.MiddleCenter,
+                Font = new Font("Segoe UI", 16, FontStyle.Bold),
+                ForeColor = Color.White,
+                Dock = DockStyle.Top,
+                Height = 60
+            };
+
+            lblTempo = new Label
+            {
+                Text = "Tempo restante: ",
+                Font = fonteGeral,
+                ForeColor = Color.LightGreen,
+                AutoSize = false,
+                TextAlign = ContentAlignment.MiddleCenter,
+                Dock = DockStyle.Top,
+                Height = 40
+            };
+
+            lblStacks = new Label
+            {
+                Text = "Stacks acumulados: 0",
+                Font = fonteGeral,
+                ForeColor = Color.LightSkyBlue,
+                AutoSize = false,
+                TextAlign = ContentAlignment.MiddleCenter,
+                Dock = DockStyle.Top,
+                Height = 40
+            };
+
+            lblTempoTotal = new Label
+            {
+                Text = "Tempo total de uso: 00:00:00",
+                Font = fonteGeral,
+                ForeColor = Color.LightGray,
+                AutoSize = false,
+                TextAlign = ContentAlignment.MiddleCenter,
+                Dock = DockStyle.Top,
+                Height = 40
+            };
+
+            btnUsarStack = new Button
+            {
+                Text = "Usar Stack",
+                Font = new Font("Segoe UI", 12, FontStyle.Bold),
+                BackColor = Color.MediumSlateBlue,
+                ForeColor = Color.White,
+                FlatStyle = FlatStyle.Flat,
+                Size = new Size(150, 40),
+                Location = new Point((this.ClientSize.Width - 150) / 2, 260)
+            };
+            btnUsarStack.Click += BtnUsarStack_Click;
+
+            this.Controls.Add(btnUsarStack);
+            this.Controls.Add(lblTempoTotal);
+            this.Controls.Add(lblStacks);
+            this.Controls.Add(lblTempo);
+            this.Controls.Add(lblTitulo);
+        }
+
+        private void BtnUsarStack_Click(object sender, EventArgs e)
+        {
+            if (stackCount > 0)
+            {
+                stackCount--;
+                MessageBox.Show("Você usou 1 stack!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                lblStacks.Text = $"Stacks acumulados: {stackCount}";
+            }
+            else
+            {
+                MessageBox.Show("Você não tem stacks para usar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void StartTimers()
+        {
+            currentSeconds = countdownSeconds;
+
+            // Temporizador para stacks
+            stackTimer = new System.Windows.Forms.Timer();
+            stackTimer.Interval = 1000; // 1 segundo
+            stackTimer.Tick += StackTimer_Tick;
+            stackTimer.Start();
+
+            // Temporizador para tempo total de uso
+            usageTimer = new System.Windows.Forms.Timer();
+            usageTimer.Interval = 1000; // 1 segundo
+            usageTimer.Tick += UsageTimer_Tick;
+            usageTimer.Start();
+        }
+
+        private void StackTimer_Tick(object sender, EventArgs e)
+        {
+            currentSeconds--;
+            lblTempo.Text = $"Tempo restante: {currentSeconds}s";
+
+            if (currentSeconds <= 0)
+            {
+                stackCount++;
+                lblStacks.Text = $"Stacks acumulados: {stackCount}";
+                currentSeconds = countdownSeconds;
+            }
+        }
+
+        private void UsageTimer_Tick(object sender, EventArgs e)
+        {
+            tempoDeUso = tempoDeUso.Add(TimeSpan.FromSeconds(1));
+            lblTempoTotal.Text = $"Tempo total de uso: {tempoDeUso:hh\\:mm\\:ss}";
+        }
+
+        [STAThread]
+        public static void Main()
+        {
+            Application.EnableVisualStyles();
+            Application.Run(new MainForm());
+        }
+    }
+}
