@@ -65,7 +65,7 @@
             this.progressBar.Name = "progressBar";
             this.progressBar.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
             this.progressBar.ProgressColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
-            this.progressBar.Size = new System.Drawing.Size(214, 10);
+            this.progressBar.Size = new System.Drawing.Size(179, 10);
             this.progressBar.TabIndex = 2;
             this.progressBar.Text = "siticoneProgressBar1";
             this.progressBar.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;

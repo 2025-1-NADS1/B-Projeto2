@@ -116,7 +116,7 @@
             // panelQuestsContainer
             // 
             this.panelQuestsContainer.AutoScroll = true;
-            this.panelQuestsContainer.Location = new System.Drawing.Point(18, 213);
+            this.panelQuestsContainer.Location = new System.Drawing.Point(12, 213);
             this.panelQuestsContainer.Name = "panelQuestsContainer";
             this.panelQuestsContainer.Size = new System.Drawing.Size(200, 319);
             this.panelQuestsContainer.TabIndex = 6;
@@ -136,6 +136,7 @@
             this.Controls.Add(this.siticoneCircleProgressBar1);
             this.Name = "menu";
             this.Text = "menu";
+            this.Load += new System.EventHandler(this.menu_Load);
             this.siticoneCircleProgressBar1.ResumeLayout(false);
             this.siticoneCircleProgressBar1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
