@@ -1,0 +1,185 @@
+﻿using System;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace TemporizadorBonito
+{
+    public class MainForm : Form
+    {
+        private System.Windows.Forms.Timer stackTimer;
+        private System.Windows.Forms.Timer usageTimer;
+
+        private Label lblTempo;
+        private Label lblStacks;
+
+        private int countdownSeconds = 30;
+        private int currentSeconds;
+        private int stackCount = 0;
+
+        private TimeSpan tempoDeUso = TimeSpan.Zero;
+
+        public MainForm()
+        {
+            InitializeComponents();
+            StartTimers();
+        }
+
+        private void InitializeComponents()
+        {
+            this.Text = "Temporizador de Recompensas";
+            this.ClientSize = new Size(540, 260);
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.BackColor = Color.FromArgb(30, 30, 30); // Fundo escuro
+
+            Font fontePequena = new Font("Segoe UI", 10, FontStyle.Regular);
+            Font fonteMedia = new Font("Segoe UI", 14, FontStyle.Bold);
+            Font fonteIcone = new Font("Segoe UI Symbol", 24, FontStyle.Regular);
+
+            // Painel de Tempo
+            Panel panelTempo = new Panel
+            {
+                BackColor = Color.FromArgb(235, 52, 100), // rosa forte
+                Size = new Size(250, 200),
+                Location = new Point(20, 20)
+            };
+
+            Label lblTempoTitulo = new Label
+            {
+                Text = "Tempo",
+                Font = fontePequena,
+                ForeColor = Color.Black,
+                Location = new Point(10, 10),
+                AutoSize = true
+            };
+
+            Label lblTempoIcone = new Label
+            {
+                Text = "⏰",
+                Font = fonteIcone,
+                ForeColor = Color.Black,
+                Location = new Point(10, 40),
+                AutoSize = true
+            };
+
+            lblTempo = new Label
+            {
+                Text = "00:00:00",
+                Font = fonteMedia,
+                ForeColor = Color.Black,
+                Location = new Point(70, 50),
+                AutoSize = true
+            };
+
+            Label lblDescricaoTempo = new Label
+            {
+                Text = "Tempo no dia\nutilizando o app",
+                Font = fontePequena,
+                ForeColor = Color.Black,
+                Location = new Point(10, 110),
+                AutoSize = true
+            };
+
+            panelTempo.Controls.Add(lblTempoTitulo);
+            panelTempo.Controls.Add(lblTempoIcone);
+            panelTempo.Controls.Add(lblTempo);
+            panelTempo.Controls.Add(lblDescricaoTempo);
+
+            // Painel de Streak
+            Panel panelStreak = new Panel
+            {
+                BackColor = Color.FromArgb(52, 199, 89), // verde
+                Size = new Size(250, 200),
+                Location = new Point(280, 20)
+            };
+
+            Label lblStreakTitulo = new Label
+            {
+                Text = "Streak",
+                Font = fontePequena,
+                ForeColor = Color.Black,
+                Location = new Point(10, 10),
+                AutoSize = true
+            };
+
+            Label lblStreakIcone = new Label
+            {
+                Text = "⚡",
+                Font = fonteIcone,
+                ForeColor = Color.Black,
+                Location = new Point(10, 40),
+                AutoSize = true
+            };
+
+            lblStacks = new Label
+            {
+                Text = "0",
+                Font = fonteMedia,
+                ForeColor = Color.Black,
+                Location = new Point(70, 50),
+                AutoSize = true
+            };
+
+            Label lblDescricaoStreak = new Label
+            {
+                Text = "Dias consecutivos\nutilizando o app",
+                Font = fontePequena,
+                ForeColor = Color.Black,
+                Location = new Point(10, 110),
+                AutoSize = true
+            };
+
+            panelStreak.Controls.Add(lblStreakTitulo);
+            panelStreak.Controls.Add(lblStreakIcone);
+            panelStreak.Controls.Add(lblStacks);
+            panelStreak.Controls.Add(lblDescricaoStreak);
+
+            // Adiciona os painéis ao form
+            this.Controls.Add(panelTempo);
+            this.Controls.Add(panelStreak);
+        }
+
+        private void StartTimers()
+        {
+            currentSeconds = countdownSeconds;
+
+            // Temporizador para stacks
+            stackTimer = new System.Windows.Forms.Timer();
+            stackTimer.Interval = 1000; // 1 segundo
+            stackTimer.Tick += StackTimer_Tick;
+            stackTimer.Start();
+
+            // Temporizador para tempo total de uso
+            usageTimer = new System.Windows.Forms.Timer();
+            usageTimer.Interval = 1000; // 1 segundo
+            usageTimer.Tick += UsageTimer_Tick;
+            usageTimer.Start();
+        }
+
+        private void StackTimer_Tick(object sender, EventArgs e)
+        {
+            currentSeconds--;
+
+            if (currentSeconds <= 0)
+            {
+                stackCount++;
+                lblStacks.Text = $"{stackCount}";
+                currentSeconds = countdownSeconds;
+            }
+        }
+
+        private void UsageTimer_Tick(object sender, EventArgs e)
+        {
+            tempoDeUso = tempoDeUso.Add(TimeSpan.FromSeconds(1));
+            lblTempo.Text = $"{tempoDeUso:hh\\:mm\\:ss}"; // <-- agora atualiza corretamente por segundo
+        }
+
+        [STAThread]
+        public static void Main()
+        {
+            Application.EnableVisualStyles();
+            Application.Run(new MainForm());
+        }
+    }
+}
