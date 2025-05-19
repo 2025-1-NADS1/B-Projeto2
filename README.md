@@ -14,7 +14,7 @@ Vide tutoriais do PI.
 
 ## Nome do Grupo
 
-## Integrantes: Victor de Camargo Natário, Daniel Verona, Antônio Michel, Michel Linebach</a>
+## Integrantes: Victor de Camargo Natário, Daniel Verona, Antônio Michel, Michel Linnebach De Maria</a>
 
 ## Professores Orientadores: <a href="https://www.linkedin.com/in/victorbarq/">Dr. Victor Von Doom</a>, <a href="https://www.linkedin.com/in/victorbarq/">Me. Saitama</a>, <a href="https://www.linkedin.com/in/victorbarq/">Dr. Strange</a>, <a href="https://www.linkedin.com/in/victorbarq/">Me. Yoda</a>, <a href="https://www.linkedin.com/in/victorbarq/">Dr. Gero</a>
 
@@ -26,11 +26,11 @@ Vide tutoriais do PI.
 </p>
 
 
-De um a dois parágrafos sobre o que é seu projeto e o que ele faz.
+Projeto PI Dashboad
 <br><br>
-Meu projeto ajuda estudantes FECAP a configurarem seus githubs.
+Nosso projeto tem como objetivo auxiliar a empresa Smart Cities na organização de seus dados e na otimização do uso de recursos em suas cidades inteligentes. A proposta busca incentivar os moradores a economizar água e energia por meio de sistemas imersivos, interativos e eficientes, beneficiando tanto a empresa quanto a comunidade.
 <br><br>
-May the force be with you!
+Com o objetivo de diminuir pelomenos 30% do gasto de água onde o sistema for implementado!.
 <br><br>
 
 ## 🛠 Estrutura de pastas
