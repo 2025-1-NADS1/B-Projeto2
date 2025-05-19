@@ -21,16 +21,30 @@ Representa os alunos cadastrados no sistema.
 
 ---
 
-## Tabela: Cursos
+# Modelagem Física do Banco de Dados
 
-Representa os cursos oferecidos pela instituição.
+## Tabelas Implementadas
 
-- **id**: número inteiro, chave primária (identificador único de cada curso)
-- **nome**: texto, nome do curso
-- **descricao**: texto, descrição resumida do curso
-- **carga_horaria**: número inteiro, carga horária total do curso em horas
-- **nivel**: texto, nível do curso (ex: Técnico, Graduação, Pós-Graduação)
-- **modalidade**: texto, modalidade do curso (ex: Presencial, EAD, Híbrido)
-- **data_inicio**: data, data de início da próxima turma
-- **vagas**: número inteiro, quantidade total de vagas oferecidas
-- **ativo**: booleano, indica se o curso está ativo para novas matrículas
+### 1. USUARIO
+| Campo    | Tipo         | Descrição               |
+|----------|--------------|-------------------------|
+| ID       | INT (PK)     | Identificador único     |
+| NOME     | VARCHAR(100) | Nome do usuário         |
+| EMAIL    | VARCHAR(100) | E-mail (único)          |
+| ENDERECO | VARCHAR(200) | Endereço físico         |
+| PLANTA   | VARCHAR(50)  | Localização no edifício |
+| TIPO     | VARCHAR(50)  | Tipo de permissão       |
+
+### 2. CASA_INTELIGENTE
+| Campo       | Tipo          | Descrição                     |
+|-------------|---------------|-------------------------------|
+| ID          | INT (PK)      | Identificador único           |
+| ESTADO      | VARCHAR(20)   | Status da casa                |
+| VALOR       | DECIMAL(10,2) | Valor associado               |
+| ID_USUARIO  | INT (FK)      | Usuário que controla a casa   |
+
+### Relacionamentos
+- *USUARIO* → Controla → *CASA_INTELIGENTE* (1:N)
+- *CASA_INTELIGENTE* → Tem → *DISPOSITIVO* (1:N)
+- *USUARIO* → Visualiza → *CASA_INTELIGENTE* (M:N via ACESSO_SERVIDOR)
+
