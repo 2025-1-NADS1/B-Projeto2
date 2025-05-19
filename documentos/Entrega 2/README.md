@@ -18,7 +18,7 @@ Os arquivos de Redes de Computadores está localizado na pasta `Redes-e-computad
 
 O arquivo de Modelagem de Software está localizado na pasta `Modelagem-de-software`.
 
-➡️ [Clique aqui para ver o README de Modelagem-de-software](./Modelagem-de-software/PI_1.png)
+➡️ [Clique aqui para ver o README de Modelagem-de-software](./Modelagem-de-software)
 
 ---
 
