@@ -18,4 +18,12 @@ Os arquivos de Redes de Computadores está localizado na pasta `Redes-e-computad
 
 O arquivo de Modelagem de Software está localizado na pasta `Modelagem-de-software`.
 
-➡️ [Clique aqui para ver o README de Redes-e-computadores](./Modelagem-de-software/PI_1.png)
+➡️ [Clique aqui para ver o README de Modelagem-de-software](./Modelagem-de-software/PI_1.png)
+
+---
+
+## Modelagem de Software
+
+Os arquivos de Algoritimos e lógica de programação estão localizado na pasta `Algoritimos-e-lógica-de-programação`.
+
+➡️ [Clique aqui para ver os arquivos de Algoritimos-e-lógica-de-programação](./Algoritimos-e-lógica-de-programação)
