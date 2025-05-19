@@ -9,15 +9,18 @@ As tabelas foram planejadas para representar dados relacionados a alunos e curso
 
 Representa os alunos cadastrados no sistema.
 
-- **id**: número inteiro, chave primária (identificador único de cada aluno)
-- **nome**: texto, nome completo do aluno
-- **matricula**: texto, número de matrícula (valor único)
-- **email**: texto, e-mail institucional do aluno
-- **data_nascimento**: data, data de nascimento do aluno
-- **telefone**: texto, número de telefone com DDD
-- **endereco**: texto, endereço completo do aluno
-- **data_cadastro**: data, data em que o aluno foi cadastrado no sistema
-- **ativo**: booleano, indica se o aluno está ativo ou não
+| Campo            | Tipo         | Descrição                    |
+| ---------------- | ------------ | ---------------------------- |
+| ID               | INT (PK)     | Identificador único do aluno |
+| NOME             | VARCHAR(100) | Nome completo do aluno       |
+| MATRICULA        | VARCHAR(50)  | Número de matrícula (único)  |
+| EMAIL            | VARCHAR(100) | E-mail institucional (único) |
+| DATA\_NASCIMENTO | DATE         | Data de nascimento do aluno  |
+| TELEFONE         | VARCHAR(20)  | Número de telefone com DDD   |
+| ENDERECO         | VARCHAR(200) | Endereço completo do aluno   |
+| DATA\_CADASTRO   | DATE         | Data de cadastro no sistema  |
+| ATIVO            | BOOLEAN      | Indica se o aluno está ativo |
+
 
 ---
 
