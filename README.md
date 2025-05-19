@@ -104,5 +104,5 @@ Coloque código do prompt de comnando se for necessário
 
 Aqui estão as referências usadas no projeto.
 
-1. [Duolingo](https://pt.duolingo.com)
+1. [Duolingo](https://pt.duolingo.com).
 2. [Solo leveling](https://www.crunchyroll.com/pt-br/series/GDKHZEJ0K/solo-leveling?srsltid=AfmBOoq9E92R2p9HjdiiAyNNK0s6evTta0f6Z77C3KIXExoqDxF_bywj).
